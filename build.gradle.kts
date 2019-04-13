@@ -14,7 +14,8 @@ repositories {
 dependencies {
     compile(kotlin("stdlib-jdk8"))
     compile("com.squareup.retrofit2:retrofit:2.5.0")
-    compile("com.google.code.gson:2.8.5")
+    compile("com.squareup.retrofit2:converter-gson:2.5.0")
+
 }
 
 tasks.withType<KotlinCompile> {
