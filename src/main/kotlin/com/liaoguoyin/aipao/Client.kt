@@ -8,17 +8,22 @@ import com.liaoguoyin.aipao.bean.UploadStatusBean
 import com.liaoguoyin.aipao.utils.Utils.encrypt
 import com.liaoguoyin.aipao.utils.Utils.random
 import retrofit2.Call
+import java.lang.NullPointerException
 
 class client(val IMEICode: String) {
     private val retrofitManager = RetrofitManager.apiService
     private var token: String = ""
-    private var keyInfo: HashMap<String, String?> = HashMap()
+    var keyInfo: HashMap<String, String?> = HashMap()
 
     fun checkImeicode() {
         val tokenCall: Call<TokenBean> = retrofitManager.checkToken(IMEICode) //TODO 可以做callback
         val tokenBean: TokenBean? = tokenCall.execute().body()
 
-        token = tokenBean!!.data.token
+        try {
+            token = tokenBean!!.data.token
+        } catch (e: NullPointerException) {
+            println("IMEICode失效！！")
+        }
         println(tokenCall.request())
         println(tokenBean)
     }
@@ -28,7 +33,7 @@ class client(val IMEICode: String) {
         val infoBean: InfoBean? = getInfoCall.execute().body()
 
         keyInfo.set("uid", infoBean!!.data.user.userID.toString())
-        keyInfo.set("name", infoBean.data.user.userName)
+        keyInfo.set("name", infoBean.data.user.nickName)
         keyInfo.set("distance", infoBean.data.schoolRun.lengths.toString())
         keyInfo.set("minSpeed", infoBean.data.schoolRun.minSpeed.toString())
         keyInfo.set("maxSpeed", infoBean.data.schoolRun.maxSpeed.toString())
@@ -53,14 +58,14 @@ class client(val IMEICode: String) {
     }
 
     fun upload() {
-        val distance = keyInfo["distance"]!!.toInt() + random(1, 5)
-        val speed = random(keyInfo["minSpeed"]!!.toDouble(), keyInfo["maxSpeed"]!!.toDouble())
-        val time = (distance / speed).toInt()
+        val runningDistance = (keyInfo["distance"]!!.toInt() + random(1, 5)).also { keyInfo.set("runningDistance",it.toString()) }
+        val runningSpeed = random(keyInfo["minSpeed"]!!.toDouble(), keyInfo["maxSpeed"]!!.toDouble()).also { keyInfo.set("runningSpeed",it.toString()) }
+        val runningTime = (runningDistance / runningSpeed).toInt().also { keyInfo.set("runningTime",it.toString()) }
         val runId = keyInfo.get("runId") ?: "runId null"
         val map: Map<String, String> = mapOf(
                 "S1" to runId, // 本次跑步记录的id
-                "S4" to encrypt(time), // 跑步时间 s
-                "S5" to encrypt(distance), // 跑步距离 m
+                "S4" to encrypt(runningTime), // 跑步时间 s
+                "S5" to encrypt(runningDistance), // 跑步距离 m
                 "S6" to "A0A2A1A3A0", // 跑步关键点 形似: A0A2A1A3A0
                 "S7" to "1", // 本次跑步的状态 1表示成功，0、2等非1值表示失败
                 "S8" to "czplgyznba", // 加密原字段
@@ -70,10 +75,8 @@ class client(val IMEICode: String) {
         val uploadCall: Call<UploadStatusBean> = retrofitManager.uploadRecord(token, map)
         val uploadStatusBean: UploadStatusBean? = uploadCall.execute().body()
 
-        println("跑步中...\n距离：$distance m，速度：$speed m/s，时间：$time s")
         println(uploadCall.request())
+        println("跑步中...\n距离：$runningDistance m，速度：$runningSpeed m/s，时间：$runningTime s")
         println(uploadStatusBean)
-        println("成功！点击链接查看记录：" +
-                "http://sportsapp.aipao.me/Manage/UserDomain_SNSP_Records.aspx/MyResutls?userId=${keyInfo["uid"]}")
     }
 }
