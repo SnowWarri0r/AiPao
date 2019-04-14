@@ -18,17 +18,15 @@ class client(val IMEICode: String) {
         val tokenCall: Call<TokenBean> = retrofitManager.checkToken(IMEICode) //TODO 可以做callback
         val tokenBean: TokenBean? = tokenCall.execute().body()
 
-        //        println(tokenCall.request())
-        println(tokenBean)
         token = tokenBean!!.data.token
+        println(tokenCall.request())
+        println(tokenBean)
     }
 
     fun getInfo() {
         val getInfoCall: Call<InfoBean> = retrofitManager.getInfo(token)
         val infoBean: InfoBean? = getInfoCall.execute().body()
 
-        //        println(getInfoCall)
-        println(infoBean)
         keyInfo.set("uid", infoBean!!.data.user.userID.toString())
         keyInfo.set("name", infoBean.data.user.userName)
         keyInfo.set("distance", infoBean.data.schoolRun.lengths.toString())
@@ -36,6 +34,8 @@ class client(val IMEICode: String) {
         keyInfo.set("maxSpeed", infoBean.data.schoolRun.maxSpeed.toString())
         keyInfo.set("gender", infoBean.data.schoolRun.sex)
         keyInfo.set("school", infoBean.data.schoolRun.schoolName)
+        println(getInfoCall.request())
+        println(infoBean)
     }
 
     fun running() {
@@ -48,8 +48,7 @@ class client(val IMEICode: String) {
         val runningCall: Call<PointsBean> = retrofitManager.running(token, map)
         val pointsBean: PointsBean? = runningCall.execute().body()
         keyInfo.set("runId", pointsBean!!.data.runId)
-
-        //        println(runningCall.request())
+        println(runningCall.request())
         println(pointsBean)
     }
 
@@ -70,7 +69,11 @@ class client(val IMEICode: String) {
 
         val uploadCall: Call<UploadStatusBean> = retrofitManager.uploadRecord(token, map)
         val uploadStatusBean: UploadStatusBean? = uploadCall.execute().body()
-        //        println(uploadCall.request())
+
+        println("跑步中...\n距离：$distance m，速度：$speed m/s，时间：$time s")
+        println(uploadCall.request())
         println(uploadStatusBean)
+        println("成功！点击链接查看记录：" +
+                "http://sportsapp.aipao.me/Manage/UserDomain_SNSP_Records.aspx/MyResutls?userId=${keyInfo["uid"]}")
     }
 }
