@@ -1,15 +1,10 @@
 import com.liaoguoyin.aipao.client
 import java.io.File
-import java.io.OutputStream
-import java.io.OutputStreamWriter
-import java.io.Writer
-import java.nio.charset.Charset
 import java.util.*
 
 fun main(args: Array<String>) {
     println("Please insert your IMEICode:")
     val scanner = Scanner(System.`in`)
-    //    val IMEICode = "40ae72be33f64ce6a936661bb8449fa1"
     val IMEICode = scanner.nextLine()
     println("Your IMEICode: $IMEICode")
 
