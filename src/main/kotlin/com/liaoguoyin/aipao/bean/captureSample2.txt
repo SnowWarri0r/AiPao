@@ -1,0 +1,310 @@
+
+
+Request Head:
+
+GET /api/%7Btoken%7D/QM_Users/Login_AndroidSchool?IMEICode=2eb5e4b8f29b4b8f95f316b06892d20b HTTP/1.1
+version: 2.15
+Host: client3.aipao.me
+Connection: Keep-Alive
+
+
+Body:
+
+
+
+Response Head:
+
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 235
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/7.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Tue, 02 Apr 2019 10:22:26 GMT
+
+
+Body:
+
+{
+
+	  "Success": true,
+
+	  "Data": {
+
+		    "Token": "6853586706b84745b97431b27eaf11ef",
+
+		    "UserId": 541412,
+
+		    "IMEICode": "2eb5e4b8f29b4b8f95f316b06892d20b",
+
+		    "AndroidVer": 2.14,
+
+		    "AppleVer": 1.24,
+
+		    "WinVer": 1.0
+
+	}
+
+}
+
+Request Head:
+
+GET /api/6853586706b84745b97431b27eaf11ef/QM_Users/GS HTTP/1.1
+auth: AsZEArJhdnR2wZT+9SQaOYWir5mceebIw+asdF38CWZ4=
+version: 2.15
+Host: client3.aipao.me
+Connection: Keep-Alive
+
+
+Body:
+
+
+
+Response Head:
+
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 1056
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/7.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Tue, 02 Apr 2019 10:22:26 GMT
+
+
+Body:
+
+{
+
+	  "Success": true,
+
+	  "Data": {
+
+		    "User": {
+
+			      "UserID": 541412,
+
+			      "NickName": "xx",
+
+			      "UserName": "12018241118",
+
+			      "Sex": "女",
+
+			      "Province": null,
+
+			      "City": null,
+
+			      "Country": null,
+
+			      "HeadImgUrl": "",
+
+			      "Mobile": null,
+
+			      "MobileVerifyCode": null,
+
+			      "IsMoblileVerify": "0",
+
+			      "Weights": 0.0,
+
+			      "BMI": 0.0,
+
+			      "Heights": 0.0,
+
+			      "Birthday": "0001-01-01 00:00:00",
+
+			      "OldYears": 0,
+
+			      "IsInfoOk": "0",
+
+			      "WXNickName": null,
+
+			      "WXSex": null,
+
+			      "IsStationOpen": "0",
+
+			      "IsBgMusic": "1",
+
+			      "IsReciveMsg": "1",
+
+			      "IsSchoolMode": "1",
+
+			      "Level_Lengh": 0,
+
+			      "Level_Lengh_Date": "2015-01-01 00:00:00",
+
+			      "Days_Start": 0,
+
+			      "Days_Start_Date": "2015-01-01 00:00:00"
+
+		},
+
+		    "SchoolRun": {
+
+			      "Sex": "女",
+
+			      "SchoolId": "nxu",
+
+			      "SchoolName": "宁夏大学",
+
+			      "MinSpeed": 2.0,
+
+			      "MaxSpeed": 4.0,
+
+			      "Lengths": 1800,
+
+			      "IsNeedPhoto": "0",
+
+			      "IsShowAd": 0
+
+		}
+
+	}
+
+}
+
+Request Head:
+
+GET /api/6853586706b84745b97431b27eaf11ef/QM_Runs/SRS?S1=40.62844&S2=120.791051&S3=1800 HTTP/1.1
+nonce: 6244073
+timespan: 1554200562822
+sign: 231C180130CF46DA3B50BEA8C4B757E9
+version: 2.15
+Host: client3.aipao.me
+Connection: Keep-Alive
+
+
+Body:
+
+
+
+Response Head:
+
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Length: 984
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/7.5
+X-AspNet-Version: 4.0.30319
+X-Powered-By: ASP.NET
+Date: Tue, 02 Apr 2019 10:22:42 GMT
+
+
+Body:
+
+{
+
+	  "Success": true,
+
+	  "Data": {
+
+		    "StartTime": "2019-04-02 18:22:42",
+
+		    "RunId": "aa202eba8bd04d8580041c2f81110c7c",
+
+		    "FUserId": 0,
+
+		    "FieldId": 289,
+
+		    "Routes": "A0A2A1A3A0",
+
+		    "LifeValue": 0,
+
+		    "Powers": 0,
+
+		    "LenValue": 0.0,
+
+		    "Points": [
+
+			      {
+
+				        "PointNo": "A0",
+
+				        "Lat": 40.628369,
+
+				        "Lng": 120.791004,
+
+				        "Minor": 1
+
+			},
+
+			      {
+
+				        "PointNo": "A2",
+
+				        "Lat": 40.627028,
+
+				        "Lng": 120.790986,
+
+				        "Minor": 3
+
+			},
+
+			      {
+
+				        "PointNo": "A1",
+
+				        "Lat": 40.628355,
+
+				        "Lng": 120.791669,
+
+				        "Minor": 2
+
+			},
+
+			      {
+
+				        "PointNo": "A3",
+
+				        "Lat": 40.627007,
+
+				        "Lng": 120.791651,
+
+				        "Minor": 4
+
+			},
+
+			      {
+
+				        "PointNo": "A0",
+
+				        "Lat": 40.628369,
+
+				        "Lng": 120.791004,
+
+				        "Minor": 1
+
+			}
+
+		],
+
+		    "FiledName": "",
+
+		    "Area": "",
+
+		    "SenseType": "0",
+
+		    "ImgUrl": "",
+
+		    "Major": 0
+
+	}
+
+}
+
+
+Request Head:
+
+GET /api/6853586706b84745b97431b27eaf11ef/QM_Runs/ES?S1=aa202eba8bd04d8580041c2f81110c7c&S4=ivy&S5=fsxv&S6=A0A2A1A3A0&S7=1&S8=xfvdmyirsg&S9=fixm HTTP/1.1
+nonce: 908433024
+timespan: 1554201760756
+sign: 9EAA48621A9A0304A50DB2C71CB23820
+version: 2.15
+Host: client3.aipao.me
+Connection: Keep-Alive

@@ -1,9 +1,15 @@
+
+
 Request Head:
 
-GET /api/%7Btoken%7D/QM_Users/Login_AndroidSchool?IMEICode=40ae72be33f64ce6a936661bb8449fa1 HTTP/1.1
+GET /api/%7Btoken%7D/QM_Users/Login_AndroidSchool?IMEICode=f23726bafda744f0becf5811b294a6d1 HTTP/1.1
 version: 2.15
 Host: client3.aipao.me
 Connection: Keep-Alive
+
+
+Body:
+
 
 
 Response Head:
@@ -83,7 +89,7 @@ Body:
 
             "UserID": 396928,
 
-            "NickName": "CH",
+            "NickName": "成浩",
 
             "UserName": "1710030103",
 
