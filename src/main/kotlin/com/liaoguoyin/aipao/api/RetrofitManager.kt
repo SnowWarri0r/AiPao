@@ -1,6 +1,5 @@
-package com.liaoguoyin.aipao
+package com.liaoguoyin.aipao.api
 
-import com.liaoguoyin.aipao.api.ApiService
 import com.liaoguoyin.aipao.bean.InfoBean
 import com.liaoguoyin.aipao.bean.PointsBean
 import com.liaoguoyin.aipao.bean.TokenBean
@@ -10,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-class RetrofitManager {
+object RetrofitManager : ApiService {
     val apiService: ApiService
 
     init {
@@ -23,20 +22,20 @@ class RetrofitManager {
     }
 
     // 生成 ServiceMethod，拿到Call
-    fun checkToken(IMEICode: String): Call<TokenBean> {
+    override fun checkToken(IMEICode: String): Call<TokenBean> {
         return apiService.checkToken(IMEICode)
     }
 
-    fun getInfo(token: String): Call<InfoBean> {
+    override fun getInfo(token: String): Call<InfoBean> {
         return apiService.getInfo(token)
     }
 
-    fun running(token: String, map: Map<String, String>): Call<PointsBean> {
-        return apiService.Running(token, map)
+    override fun running(token: String, map: Map<String, String>): Call<PointsBean> {
+        return apiService.running(token, map)
     }
 
-    fun uploadRecorder(token: String, hashMap: HashMap<String, String>): Call<UploadStatusBean> {
-        return apiService.UploadStatus(token, hashMap)
+    override fun uploadRecord(token: String, Map: Map<String, String>): Call<UploadStatusBean> {
+        return apiService.uploadRecord(token, Map)
     }
 
 }
