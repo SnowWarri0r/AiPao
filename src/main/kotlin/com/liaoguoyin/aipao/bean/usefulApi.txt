@@ -1,0 +1,14 @@
+- 跑步1：获取 token
+http://client3.aipao.me/api/%7Btoken%7D/QM_Users/Login_AndroidSchool?IMEICode=c09414bdaeb74f17b3e963654f95dfd2
+
+- 跑步2：获取 runId
+http://client3.aipao.me/api/543d50e94f5f408882b134ff86abe9b3/QM_Runs/SRS?S1=40.62825&S2=120.79107&S3=3000
+
+- 跑步3：上传成绩
+http://client3.aipao.me/api/ae03180bdfe243a6be2824785d14f500/QM_Runs/ES?S1=7a46275845524e3385183cba5be36500&S4=owow&S5=kbbk&S6=A0A2A1A3A0&S7=1&S8=bozkhjwnui&S9=b HTTP/1.1
+
+记录查询
+http://sportsapp.aipao.me/Manage/UserDomain_SNSP_Records.aspx/MyResutls?userId=396971
+
+总记录查询
+http://sportsapp.aipao.me/MyResults.ashx?sunnyId=396962&schoolId=lntu&pageNo=1&type=1
