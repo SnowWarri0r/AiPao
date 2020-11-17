@@ -41,7 +41,7 @@ public class AipaoClinet {
             LoginBean TestResult = apiService.imeilogin("Login_AndroidSchool", imeicode).execute().body();
 
             if (!Objects.requireNonNull(TestResult).isSuccess()) {
-                retrofitManager = new RetrofitManager("http://client4.aipao.me/api/");
+                retrofitManager = new RetrofitManager("http://client3.aipao.me/api/");
                 apiService = retrofitManager.getApiService();
             }
 
@@ -55,7 +55,7 @@ public class AipaoClinet {
         String apiUrl = retrofitManager.getRetrofit().baseUrl().toString();
         Call<LoginBean> loginBeanCall;
 
-        if (apiUrl.equals("http://client4.aipao.me/api/")) {
+        if (apiUrl.equals("http://client3.aipao.me/api/")) {
             loginBeanCall = apiService.imeilogin("LoginSchool", imeicode);
         } else {
             loginBeanCall = apiService.imeilogin("Login_AndroidSchool", imeicode);

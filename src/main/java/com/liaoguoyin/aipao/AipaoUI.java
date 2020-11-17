@@ -10,12 +10,12 @@ public class AipaoUI extends JFrame {
     private JTextField InputIMEICode;
     private JTextArea result;
     private String IMEICode;
-    private static Boolean[] flags = {true, false};// Buttons æ˜¯å¦å¯è§
+    private static Boolean[] flags = {true, false};// Buttons ÊÇ·ñ¿É¼û
     private AipaoClinet client;
     private JButton check, submitRecorder;
 
     private AipaoUI() {
-        setTitle("Aipao Client - LGY å¤ªå¼ºäº†");
+        setTitle("Aipao Client - LGY Ì«Ç¿ÁË");
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
@@ -43,7 +43,7 @@ public class AipaoUI extends JFrame {
                 checkInput(IMEICode);
                 client = new AipaoClinet(IMEICode);
                 client.login();
-                result.append("IMEICode æœ‰æ•ˆ: " + IMEICode + "\n\n");
+                result.append("IMEICode ÓÐÐ§: " + IMEICode + "\n\n");
 
                 client.getBasicInfo();
                 result.append(client.output.toString() + "\n\n");
@@ -52,9 +52,9 @@ public class AipaoUI extends JFrame {
                 flags[0] = false;
                 freshBtns();
             }catch (NullPointerException e1) {
-                result.append("IMEICode å·²å¤±æ•ˆ\n");
+                result.append("IMEICode ÒÑÊ§Ð§\n");
             }catch (RuntimeException e1) {
-                result.append("IMEICode æ ¼å¼é”™è¯¯ï¼Œæ­£ç¡®æ ¼å¼ä¸ºï¼š5ec0473d294347d7b69f062abf16d111\n\n");
+                result.append("IMEICode ¸ñÊ½´íÎó£¬ÕýÈ·¸ñÊ½Îª£º5ec0473d294347d7b69f062abf16d111\n\n");
             }catch (IOException ex) {
                 result.append("Check Your Network..\n");
             }
@@ -71,12 +71,12 @@ public class AipaoUI extends JFrame {
                 result.append(client.output.toString());
                 result.append("\nClick here to query the recorder: http://sportsapp.aipao.me/Manage/UserDomain_SNSP_Records.aspx/MyResutls?userId=" + client.info.get("userId").toString() + "\n\nSuccess");
 
-                // é‡ç½® flags
+                // ÖØÖÃ flags
                 flags[0] = true;
                 flags[1] = false;
                 freshBtns();
             }catch (IOException ex) {
-                result.append("IMEICode å¤±æ•ˆ\n\n");
+                result.append("IMEICode Ê§Ð§\n\n");
             }
         });
 
@@ -84,7 +84,7 @@ public class AipaoUI extends JFrame {
         panel2.add(reset);
         reset.addActionListener(e -> {
             InputIMEICode.setText("Please insert your IMEICode here");
-            result.append("è¾“å…¥æ–°çš„ IEMICode\n\n");
+            result.append("ÊäÈëÐÂµÄ IEMICode\n\n");
             flags[0] = true;
             flags[1] = false;
             freshBtns();

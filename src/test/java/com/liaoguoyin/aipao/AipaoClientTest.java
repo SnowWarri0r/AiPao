@@ -9,7 +9,7 @@ public class AipaoClientTest {
     public static void main(String[] args) throws IOException, InterruptedException {
         int pauseTime = 50000;// Sleep 50s when finishing the script.
         int okIMEICode = 0;
-        System.out.println("LGY 澶己浜嗭紝loading IMEICode.txt..");
+        System.out.println("LGY 太强了，loading IMEICode.txt..");
 
         File file = new File("IMEICode.txt");
         if (!file.exists()) {
@@ -44,11 +44,11 @@ public class AipaoClientTest {
             return Boolean.TRUE;
 
         }catch (IOException e) {
-            System.out.println("杈撳叆杈撳嚭寮傚父锛岃妫�鏌ヨ剼鏈槸鍚︽湁璇诲啓鏉冮檺");
+            System.out.println("输入输出异常，请检查脚本是否有读写权限");
             e.printStackTrace();
             return Boolean.FALSE;
         }catch (NullPointerException e) {
-            System.out.println(imeiCode + " 绌烘寚閽堝紓甯革紝鍙兘鏄疘MEICode澶辨晥");
+            System.out.println(imeiCode + " 空指针异常，可能是IMEICode失效");
             e.printStackTrace();
             return Boolean.FALSE;
         }
