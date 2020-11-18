@@ -6,11 +6,11 @@ import java.security.NoSuchAlgorithmException;
 
 public class Utils {
     /**
-     * ä¼ å…¥ä¸€ä¸ªä¸€ä¸ªèŒƒå›´[min, max]ï¼Œè¿”å›èŒƒå›´å†…çš„éšæœºæ•°
+     * ´«ÈëÒ»¸öÒ»¸ö·¶Î§[min, max]£¬·µ»Ø·¶Î§ÄÚµÄËæ»úÊı
      *
-     * @param min éšæœºæ•°çš„æœ€å°å€¼
-     * @param max éšæœºæ•°çš„æœ€å¤§å€¼
-     * @return è¿”å›èŒƒå›´å†…çš„éšæœºæ•°
+     * @param min Ëæ»úÊıµÄ×îĞ¡Öµ
+     * @param max Ëæ»úÊıµÄ×î´óÖµ
+     * @return ·µ»Ø·¶Î§ÄÚµÄËæ»úÊı
      */
     static int randomUtils(int min, int max) {
         return (int) (min + ((max - min) * Math.random()));
@@ -21,13 +21,13 @@ public class Utils {
     }
 
     /**
-     * å°†æ•°å­—è½¬æ¢æˆå­—æ¯ï¼Œç¼–ç çš„æ—¶å€™ä¸åŒæ•°å­—å¯¹åº”çš„å­—æ¯å”¯ä¸€
+     * ½«Êı×Ö×ª»»³É×ÖÄ¸£¬±àÂëµÄÊ±ºò²»Í¬Êı×Ö¶ÔÓ¦µÄ×ÖÄ¸Î¨Ò»
      *
-     * @param i å¾…è½¬æ•°å­—
-     * @return åŠ å¯†å¤„ç†åçš„å­—ç¬¦ä¸²
+     * @param i ´ı×ªÊı×Ö
+     * @return ¼ÓÃÜ´¦ÀíºóµÄ×Ö·û´®
      */
     static String encrypt(int i) {
-        String encryptOrigin = "xfvdmyirsg";// ä»»æ„10ä¸ªä¸åŒçš„å­—ç¬¦ï¼ŒåŠ å¯†æº(æ³¨æ„ï¼ï¼ä¸æ˜¯å®Œå…¨ä»»æ„ï¼Œéœ€è¦è‡ªå·±æŠ“ä¸€æ¬¡åŒ…æ¥ç¡®å®š)
+        String encryptOrigin = "xfvdmyirsg";// ÈÎÒâ10¸ö²»Í¬µÄ×Ö·û£¬¼ÓÃÜÔ´(×¢Òâ£¡£¡²»ÊÇÍêÈ«ÈÎÒâ£¬ĞèÒª×Ô¼º×¥Ò»´Î°üÀ´È·¶¨)
         StringBuilder result = new StringBuilder();
         char[] chars = String.valueOf(i).toCharArray();
 
@@ -39,8 +39,8 @@ public class Utils {
 
     /**
      * @param s inputstring
-     * @return è¿”å›å¯¹åº”çš„md5å€¼
-     * @throws NoSuchAlgorithmException md5ç®—æ³•é”™è¯¯
+     * @return ·µ»Ø¶ÔÓ¦µÄmd5Öµ
+     * @throws NoSuchAlgorithmException md5Ëã·¨´íÎó
      */
     public static String md5(String s) throws NoSuchAlgorithmException {
         MessageDigest messageDigest = MessageDigest.getInstance("md5");

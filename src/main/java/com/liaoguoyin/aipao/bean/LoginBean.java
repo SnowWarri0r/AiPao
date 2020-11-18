@@ -29,9 +29,9 @@ public class LoginBean {
     }
 
     /**
-     * Todo 浼间箮杩欓噷涔熷彲浠ョ敤鍙嶅皠
+     * Todo 似乎这里也可以用反射
      *
-     * @return 杩斿洖涓�浜涙湁浠峰�肩殑淇℃伅
+     * @return 返回一些有价值的信息
      */
     @Override
     public String toString() {

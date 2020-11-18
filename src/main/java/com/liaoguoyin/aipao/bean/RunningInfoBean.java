@@ -17,11 +17,11 @@ public class RunningInfoBean {
     @Override
     public String toString() {
         Map<String, Object> map = new HashMap<>();
-        map.put("æœ¬æ¬¡å¼€å§‹è·‘æ­¥æ—¶é—´", this.Data.StartTime);
+        map.put("±¾´Î¿ªÊ¼ÅÜ²½Ê±¼ä", this.Data.StartTime);
         map.put("RunId", this.Data.RunId);
         List<DataBean.PointsBean> points = this.getData().getPoints();
         for (int i = 0; i < points.size(); i++) {
-            map.put("è·‘æ­¥ç‚¹" + i, "(" + points.get(i).Lng + "," + points.get(i).Lat + ")");
+            map.put("ÅÜ²½µã" + i, "(" + points.get(i).Lng + "," + points.get(i).Lat + ")");
         }
         return map.toString();
     }

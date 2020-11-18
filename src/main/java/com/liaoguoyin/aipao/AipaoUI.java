@@ -15,7 +15,7 @@ public class AipaoUI extends JFrame {
     private JButton check, submitRecorder;
 
     private AipaoUI() {
-        setTitle("Aipao Client - LGY л╚г©ак");
+        setTitle("Aipao Client");
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 

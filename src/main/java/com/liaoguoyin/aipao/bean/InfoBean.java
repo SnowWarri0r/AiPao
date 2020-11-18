@@ -8,7 +8,7 @@ public class InfoBean {
 
     /**
      * Success : true
-     * Data : {"User":{"UserID":396971,"NickName":"LGY","UserName":"1710030212","Sex":"ç”·","Province":null,"City":null,"Country":null,"HeadImgUrl":"","Mobile":null,"MobileVerifyCode":null,"IsMoblileVerify":"0","Weights":0,"BMI":0,"Heights":0,"Birthday":"0001-01-01 00:00:00","OldYears":0,"IsInfoOk":"0","WXNickName":null,"WXSex":null,"IsStationOpen":"0","IsBgMusic":"1","IsReciveMsg":"1","IsSchoolMode":"1","Level_Lengh":0,"Level_Lengh_Date":"2015-01-01 00:00:00","Days_Start":0,"Days_Start_Date":"2015-01-01 00:00:00"},"SchoolRun":{"Sex":"ç”·","SchoolId":"lntu","SchoolName":"è¾½å®å·¥ç¨‹æŠ€æœ¯å¤§å­¦","MinSpeed":1.9,"MaxSpeed":4,"Lengths":3000,"IsNeedPhoto":"0","IsShowAd":0}}
+     * Data : {"User":{"UserID":396971,"NickName":"LGY","UserName":"1710030212","Sex":"ÄĞ","Province":null,"City":null,"Country":null,"HeadImgUrl":"","Mobile":null,"MobileVerifyCode":null,"IsMoblileVerify":"0","Weights":0,"BMI":0,"Heights":0,"Birthday":"0001-01-01 00:00:00","OldYears":0,"IsInfoOk":"0","WXNickName":null,"WXSex":null,"IsStationOpen":"0","IsBgMusic":"1","IsReciveMsg":"1","IsSchoolMode":"1","Level_Lengh":0,"Level_Lengh_Date":"2015-01-01 00:00:00","Days_Start":0,"Days_Start_Date":"2015-01-01 00:00:00"},"SchoolRun":{"Sex":"ÄĞ","SchoolId":"lntu","SchoolName":"ÁÉÄş¹¤³Ì¼¼Êõ´óÑ§","MinSpeed":1.9,"MaxSpeed":4,"Lengths":3000,"IsNeedPhoto":"0","IsShowAd":0}}
      */
 
     private boolean Success;
@@ -31,25 +31,25 @@ public class InfoBean {
     }
 
     /**
-     * @return è¿”å›ä¸€äº›æœ‰ä»·å€¼çš„ä¿¡æ¯
+     * @return ·µ»ØÒ»Ğ©ÓĞ¼ÛÖµµÄĞÅÏ¢
      */
     @Override
     public String toString() {
         Map<String, Object> map = new HashMap<>();
-        map.put("å§“å", this.getData().User.NickName);
-        map.put("å­¦æ ¡", this.getData().SchoolRun.SchoolName);
-        map.put("å­¦å·", this.getData().User.UserName);
-        map.put("æ€§åˆ«", this.getData().SchoolRun.Sex);
-        map.put("æœ€å°é€Ÿåº¦", this.getData().SchoolRun.MinSpeed);
-        map.put("æœ€å¤§é€Ÿåº¦", this.getData().SchoolRun.MaxSpeed);
-        map.put("è·‘æ­¥è·¯ç¨‹", this.getData().SchoolRun.Lengths);
+        map.put("ĞÕÃû", this.getData().User.NickName);
+        map.put("Ñ§Ğ£", this.getData().SchoolRun.SchoolName);
+        map.put("Ñ§ºÅ", this.getData().User.UserName);
+        map.put("ĞÔ±ğ", this.getData().SchoolRun.Sex);
+        map.put("×îĞ¡ËÙ¶È", this.getData().SchoolRun.MinSpeed);
+        map.put("×î´óËÙ¶È", this.getData().SchoolRun.MaxSpeed);
+        map.put("ÅÜ²½Â·³Ì", this.getData().SchoolRun.Lengths);
         return map.toString();
     }
 
     public static class DataBean {
         /**
-         * User : {"UserID":396973,"NickName":"LGY","UserName":"1710030205","Sex":"ç”·","Province":null,"City":null,"Country":null,"HeadImgUrl":"","Mobile":null,"MobileVerifyCode":null,"IsMoblileVerify":"0","Weights":0,"BMI":0,"Heights":0,"Birthday":"0001-01-01 00:00:00","OldYears":0,"IsInfoOk":"0","WXNickName":null,"WXSex":null,"IsStationOpen":"0","IsBgMusic":"1","IsReciveMsg":"1","IsSchoolMode":"1","Level_Lengh":0,"Level_Lengh_Date":"2015-01-01 00:00:00","Days_Start":0,"Days_Start_Date":"2015-01-01 00:00:00"}
-         * SchoolRun : {"Sex":"ç”·","SchoolId":"lntu","SchoolName":"è¾½å®å·¥ç¨‹æŠ€æœ¯å¤§å­¦","MinSpeed":1.9,"MaxSpeed":4,"Lengths":3000,"IsNeedPhoto":"0","IsShowAd":0}
+         * User : {"UserID":396973,"NickName":"LGY","UserName":"1710030205","Sex":"ÄĞ","Province":null,"City":null,"Country":null,"HeadImgUrl":"","Mobile":null,"MobileVerifyCode":null,"IsMoblileVerify":"0","Weights":0,"BMI":0,"Heights":0,"Birthday":"0001-01-01 00:00:00","OldYears":0,"IsInfoOk":"0","WXNickName":null,"WXSex":null,"IsStationOpen":"0","IsBgMusic":"1","IsReciveMsg":"1","IsSchoolMode":"1","Level_Lengh":0,"Level_Lengh_Date":"2015-01-01 00:00:00","Days_Start":0,"Days_Start_Date":"2015-01-01 00:00:00"}
+         * SchoolRun : {"Sex":"ÄĞ","SchoolId":"lntu","SchoolName":"ÁÉÄş¹¤³Ì¼¼Êõ´óÑ§","MinSpeed":1.9,"MaxSpeed":4,"Lengths":3000,"IsNeedPhoto":"0","IsShowAd":0}
          */
 
         private UserBean User;
@@ -76,7 +76,7 @@ public class InfoBean {
              * UserID : 396974
              * NickName : LGY
              * UserName : 1710030211
-             * Sex : ç”·
+             * Sex : ÄĞ
              * Province : null
              * City : null
              * Country : null
@@ -142,9 +142,9 @@ public class InfoBean {
 
         public static class SchoolRunBean {
             /**
-             * Sex : ç”·
+             * Sex : ÄĞ
              * SchoolId : lntu
-             * SchoolName : è¾½å®å·¥ç¨‹æŠ€æœ¯å¤§å­¦
+             * SchoolName : ÁÉÄş¹¤³Ì¼¼Êõ´óÑ§
              * MinSpeed : 1.9
              * MaxSpeed : 4
              * Lengths : 3000

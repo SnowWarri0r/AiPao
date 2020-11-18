@@ -55,11 +55,7 @@ public class AipaoClinet {
         String apiUrl = retrofitManager.getRetrofit().baseUrl().toString();
         Call<LoginBean> loginBeanCall;
 
-        if (apiUrl.equals("http://client3.aipao.me/api/")) {
-            loginBeanCall = apiService.imeilogin("LoginSchool", imeicode);
-        } else {
-            loginBeanCall = apiService.imeilogin("Login_AndroidSchool", imeicode);
-        }
+        loginBeanCall = apiService.imeilogin("LoginSchool", imeicode);
         LoginBean loginBean = loginBeanCall.execute().body();
 
         System.out.println(loginBeanCall.request());
@@ -99,19 +95,19 @@ public class AipaoClinet {
         System.out.println(running.request());
 //        output = new StringBuilder();
         output.append(String.format("Time Scope: [%.1f, %.1f]", distance / maxSpeed, distance / minSpeed))
-                .append(String.format("%nRunning Distance: %s(ç±³), Cost Time: %s(ç§’)%n", distance, time));
+                .append(String.format("%nRunning Distance: %s(Ã×), Cost Time: %s(Ãë)%n", distance, time));
         System.out.println(output.toString());
     }
 
     public void uploadRecord() throws IOException {
         Map<String, String> record = new HashMap<>();
-        record.put("S1", info.get("runid").toString());// æœ¬æ¬¡è·‘æ­¥è®°å½•çš„id
-        record.put("S4", encrypt(time));// è·‘æ­¥æ—¶é—´ s
-        record.put("S5", encrypt(distance));// è·‘æ­¥è·ç¦» m
-        record.put("S6", "A0A2A1A3A0");// è·‘æ­¥å…³é”®ç‚¹ å½¢ä¼¼: A0A2A1A3A0
-        record.put("S7", "1");// æœ¬æ¬¡è·‘æ­¥çš„çŠ¶æ€ 1è¡¨ç¤ºæˆåŠŸï¼Œ0ã€2ç­‰é1å€¼è¡¨ç¤ºå¤±è´¥
-        record.put("S8", "xfvdmyirsg");// åŠ å¯†åŸå­—æ®µ
-        record.put("S9", encrypt(randomUtils(1111, 1888)));// è·‘æ­¥æ­¥æ•°
+        record.put("S1", info.get("runid").toString());// ±¾´ÎÅÜ²½¼ÇÂ¼µÄid
+        record.put("S4", encrypt(time));// ÅÜ²½Ê±¼ä s
+        record.put("S5", encrypt(distance));// ÅÜ²½¾àÀë m
+        record.put("S6", "A0A2A1A3A0");// ÅÜ²½¹Ø¼üµã ĞÎËÆ: A0A2A1A3A0
+        record.put("S7", "1");// ±¾´ÎÅÜ²½µÄ×´Ì¬ 1±íÊ¾³É¹¦£¬0¡¢2µÈ·Ç1Öµ±íÊ¾Ê§°Ü
+        record.put("S8", "xfvdmyirsg");// ¼ÓÃÜÔ­×Ö¶Î
+        record.put("S9", encrypt(randomUtils(1111, 1888)));// ÅÜ²½²½Êı
 
         Call<UploadBean> uploadRecord = apiService.uploadRecord(info.get("token").toString(), record);
         System.out.println(info.toString());
