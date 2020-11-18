@@ -9,7 +9,7 @@ public class AipaoClientTest {
     public static void main(String[] args) throws IOException, InterruptedException {
         int pauseTime = 50000;// Sleep 50s when finishing the script.
         int okIMEICode = 0;
-        System.out.println("LGY Ì«Ç¿ÁË£¬loading IMEICode.txt..");
+        System.out.println("loading IMEICode.txt..");
 
         File file = new File("IMEICode.txt");
         if (!file.exists()) {
