@@ -43,7 +43,6 @@ More: [阳光体育长跑的正确打开姿势](https://liaoguoyin.com/2019/05/1
  
    - 进入 [src/test](src/test/java/com/liaoguoyin/aipao/AipaoClientTest.java) 目录, 点击左侧的绿色箭头运行, 在控制台输入 `IMEICode` 回车即可.
  
-   - （本项目还有 `Python` 版和 `Kotlin` 版, 请切换分支自取.）
    
 ## Other
      **Author: [LiaoGuoYin](https://github.com/Biubang)**
